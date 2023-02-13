@@ -167,6 +167,7 @@
                     name="button_end_work"
                     attrs="{'invisible': [('show_time_control', '!=', 'stop')]}"
                     class="o_kanban_inline_block fa fa-lg fa-stop-circle text-warning"
+                    style="color: red !important;"
                     tabindex="-1"
                     type="object"
                     title="Stop work"
