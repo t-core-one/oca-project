@@ -18,6 +18,7 @@ setuptools.setup(
         'odoo-addon-project_parent_task_filter>=15.0dev,<15.1dev',
         'odoo-addon-project_purchase_analytic_global>=15.0dev,<15.1dev',
         'odoo-addon-project_role>=15.0dev,<15.1dev',
+        'odoo-addon-project_stage_mgmt>=15.0dev,<15.1dev',
         'odoo-addon-project_status>=15.0dev,<15.1dev',
         'odoo-addon-project_stock>=15.0dev,<15.1dev',
         'odoo-addon-project_stock_product_set>=15.0dev,<15.1dev',
@@ -32,8 +33,10 @@ setuptools.setup(
         'odoo-addon-project_task_stage_state>=15.0dev,<15.1dev',
         'odoo-addon-project_template>=15.0dev,<15.1dev',
         'odoo-addon-project_timeline>=15.0dev,<15.1dev',
+        'odoo-addon-project_timeline_hr_timesheet>=15.0dev,<15.1dev',
         'odoo-addon-project_timesheet_time_control>=15.0dev,<15.1dev',
         'odoo-addon-project_type>=15.0dev,<15.1dev',
+        'odoo-addon-project_wbs>=15.0dev,<15.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',

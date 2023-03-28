@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2022-02-06 20:59+0000\n"
+"PO-Revision-Date: 2023-03-04 18:23+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es_AR\n"
@@ -14,7 +14,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: project_role
+#: code:addons/project_role/models/project_assignment.py:0
+#, python-format
+msgid "%(USER)s as %(ROLE)s"
+msgstr "%(USER)s como %(ROLE)s"
+
+#. module: project_role
+#: code:addons/project_role/models/project_assignment.py:0
+#, python-format
+msgid "%(USER)s as %(ROLE)s in %(PROJECT)s"
+msgstr "%(USER)s como %(ROLE)s en %(PROJECT)s"
+
+#. module: project_role
+#: code:addons/project_role/models/project_assignment.py:0
+#, python-format
+msgid "%(USER)s as %(ROLE)s on %(PROJECT)s"
+msgstr "%(USER)s como %(ROLE)s en %(PROJECT)s"
 
 #. module: project_role
 #: code:addons/project_role/models/project_role.py:0
@@ -23,29 +41,11 @@ msgid "%(parent)s / %(own)s"
 msgstr "%(parent)s / %(own)s"
 
 #. module: project_role
-#: code:addons/project_role/models/project_assignment.py:0
-#, python-format
-msgid "%s as %s"
-msgstr "%s como %s"
-
-#. module: project_role
-#: code:addons/project_role/models/project_assignment.py:0
-#, python-format
-msgid "%s as %s in %s"
-msgstr "%s como %s en %s"
-
-#. module: project_role
-#: code:addons/project_role/models/project_assignment.py:0
-#, python-format
-msgid "%s as %s on %s"
-msgstr "%s como %s el %s"
-
-#. module: project_role
 #: model_terms:ir.ui.view,arch_db:project_role.res_config_settings_view_form
 msgid ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
+"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
+"\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Los valores configurados acá "
 "son específicos de la compañía.\" role=\"img\" aria-label=\"Los valores "
@@ -56,13 +56,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:project_role.res_config_settings_view_form
 msgid ""
 "<span class=\"o_form_label\">Project Roles</span>\n"
-"                                <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+"                                <span class=\"fa fa-lg fa-building-o\" title="
+"\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values "
+"set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 "<span class=\"o_form_label\">Roles de Proyecto</span>\n"
 "                                <span class=\"fa fa-lg fa-building-o\" title="
-"\"Los valores configurados acá son específicos de la compañía.\" role=\"img\""
-" aria-label=\"Los valores configurados acá son específicos de la compañía.\" "
-"groups=\"base.group_multi_company\"/>"
+"\"Los valores configurados acá son específicos de la compañía.\" role=\"img"
+"\" aria-label=\"Los valores configurados acá son específicos de la compañía."
+"\" groups=\"base.group_multi_company\"/>"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__message_needaction
@@ -86,8 +88,12 @@ msgstr "Archivado"
 #. module: project_role
 #: code:addons/project_role/models/project_assignment.py:0
 #, python-format
-msgid "Assignment %s conflicts with another assignment: %s"
-msgstr "La asignación %s entra en conflicto con otra asignación: %s"
+msgid ""
+"Assignment %(ASSIGNMENT)s conflicts with another assignment: "
+"%(OTHER_ASSIGNMENT)s"
+msgstr ""
+"Asignación %(ASSIGNMENT)s tiene conflictos con otra asignación: "
+"%(OTHER_ASSIGNMENT)s"
 
 #. module: project_role
 #: model:ir.actions.act_window,name:project_role.project_assignment_view_project_action
@@ -171,10 +177,7 @@ msgstr "Descripción"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__display_name
-#: model:ir.model.fields,field_description:project_role.field_project_project__display_name
 #: model:ir.model.fields,field_description:project_role.field_project_role__display_name
-#: model:ir.model.fields,field_description:project_role.field_res_company__display_name
-#: model:ir.model.fields,field_description:project_role.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
@@ -182,11 +185,6 @@ msgstr "Mostrar Nombre"
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
-
-#. module: project_role
-#: model:ir.model.fields,field_description:project_role.field_project_assignment__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__message_partner_ids
@@ -199,11 +197,13 @@ msgid "Group By"
 msgstr "Agrupar Por"
 
 #. module: project_role
+#: model:ir.model.fields,field_description:project_role.field_project_assignment__has_message
+msgid "Has Message"
+msgstr "Tiene un Mensaje"
+
+#. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__id
-#: model:ir.model.fields,field_description:project_role.field_project_project__id
 #: model:ir.model.fields,field_description:project_role.field_project_role__id
-#: model:ir.model.fields,field_description:project_role.field_res_company__id
-#: model:ir.model.fields,field_description:project_role.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 
@@ -221,8 +221,8 @@ msgstr "Si está seleccionado, algunos mensajes tienen error de entrega."
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_project__inherit_assignments
-msgid "Inherit assignments"
-msgstr "Asignaciones heredadas"
+msgid "Inherit Assignments"
+msgstr "Asignaciones Heredadas"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__message_is_follower
@@ -231,10 +231,7 @@ msgstr "Es Seguidor"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment____last_update
-#: model:ir.model.fields,field_description:project_role.field_project_project____last_update
 #: model:ir.model.fields,field_description:project_role.field_project_role____last_update
-#: model:ir.model.fields,field_description:project_role.field_res_company____last_update
-#: model:ir.model.fields,field_description:project_role.field_res_config_settings____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
@@ -259,8 +256,8 @@ msgstr "Limitar el Rol del Proyecto a las Asignaciones"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_project__limit_role_to_assignments
-msgid "Limit role to assignments"
-msgstr "Limitar rol a asignaciones"
+msgid "Limit Role To Assignments"
+msgstr "Limitar Rol a las Asignaciones"
 
 #. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__message_main_attachment_id
@@ -330,7 +327,6 @@ msgid "Please activate first parent role %s"
 msgstr "Por favor active el rol %s del primer padre"
 
 #. module: project_role
-#: model:ir.model,name:project_role.model_project_project
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__project_id
 #: model_terms:ir.ui.view,arch_db:project_role.project_assignment_search
 msgid "Project"
@@ -425,14 +421,14 @@ msgstr "Usuario"
 #. module: project_role
 #: code:addons/project_role/models/project_assignment.py:0
 #, python-format
-msgid "User %s can not be assigned to role %s on %s."
-msgstr "El usuario %s no se puede asignar al rol %s en %s."
+msgid "User %(USER)s can not be assigned to role %(ROLE)s on %(PROJECT)s."
+msgstr "Usuario %(USER)s no puede ser asignado al rol %(ROLE)s en %(PROJECT)s."
 
 #. module: project_role
 #: code:addons/project_role/models/project_assignment.py:0
 #, python-format
-msgid "User %s can not be assigned to role %s."
-msgstr "El usuario %s no se puede asignar al rol %s."
+msgid "User %(USER)s can not be assigned to role %(ROLE)s."
+msgstr "Usuario %(USER)s no puede ser asignado al rol %(ROLE)s."
 
 #. module: project_role
 #: model:ir.model.constraint,message:project_role.constraint_project_assignment_company_role_user_uniq
@@ -452,6 +448,11 @@ msgid "User may be assigned per role only once!"
 msgstr "¡El usuario puede ser asignado por rol solo una vez!"
 
 #. module: project_role
+#: model:ir.model,name:project_role.model_project_project
+msgid "WBS element"
+msgstr "Elemento WBS"
+
+#. module: project_role
 #: model:ir.model.fields,field_description:project_role.field_project_assignment__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes del Sitio Web"
@@ -460,3 +461,36 @@ msgstr "Mensajes del Sitio Web"
 #: model:ir.model.fields,help:project_role.field_project_assignment__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del Sitio Web"
+
+#, python-format
+#~ msgid "%s as %s"
+#~ msgstr "%s como %s"
+
+#, python-format
+#~ msgid "%s as %s in %s"
+#~ msgstr "%s como %s en %s"
+
+#, python-format
+#~ msgid "%s as %s on %s"
+#~ msgstr "%s como %s el %s"
+
+#, python-format
+#~ msgid "Assignment %s conflicts with another assignment: %s"
+#~ msgstr "La asignación %s entra en conflicto con otra asignación: %s"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid "Inherit assignments"
+#~ msgstr "Asignaciones heredadas"
+
+#~ msgid "Limit role to assignments"
+#~ msgstr "Limitar rol a asignaciones"
+
+#, python-format
+#~ msgid "User %s can not be assigned to role %s on %s."
+#~ msgstr "El usuario %s no se puede asignar al rol %s en %s."
+
+#, python-format
+#~ msgid "User %s can not be assigned to role %s."
+#~ msgstr "El usuario %s no se puede asignar al rol %s."
