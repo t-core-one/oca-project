@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-17 22:55+0000\n"
+"PO-Revision-Date: 2023-11-02 10:40+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: project_stock
 #: model:ir.model.fields,field_description:project_stock.field_project_task__allow_moves_action_assign
@@ -159,7 +159,7 @@ msgstr "Movimento conto analitico"
 #. module: project_stock
 #: model:ir.model.fields,field_description:project_stock.field_project_task__stock_analytic_tag_ids
 msgid "Move Analytic Tags"
-msgstr "Movimento etichette analitiche"
+msgstr "Etichette movimento analitico"
 
 #. module: project_stock
 #: model:ir.model.fields,help:project_stock.field_project_task__stock_analytic_account_id
@@ -175,7 +175,7 @@ msgstr "Tipo di operazione"
 #. module: project_stock
 #: model:ir.model.fields.selection,name:project_stock.selection__project_task__stock_state__pending
 msgid "Pending"
-msgstr "In sospeso"
+msgstr "In attesa"
 
 #. module: project_stock
 #: model_terms:ir.ui.view,arch_db:project_stock.view_task_form2
@@ -185,7 +185,7 @@ msgstr "Movimenti prodotto"
 #. module: project_stock
 #: model:ir.model,name:project_stock.model_stock_move_line
 msgid "Product Moves (Stock Move Line)"
-msgstr "Movimenti prodotto (riga movimento magazzino)"
+msgstr "Movimenti prodotto (riga movimento di magazzino)"
 
 #. module: project_stock
 #: model:ir.model.fields,field_description:project_stock.field_account_analytic_line__stock_task_id
@@ -255,7 +255,7 @@ msgstr "I movimenti di magazzino sono bloccati"
 #. module: project_stock
 #: model:ir.model.fields,field_description:project_stock.field_project_task__stock_state
 msgid "Stock State"
-msgstr "Stato magazzino"
+msgstr "Stato giacenza"
 
 #. module: project_stock
 #: model:ir.model,name:project_stock.model_project_task
@@ -278,7 +278,7 @@ msgstr "Lavoro per materiale"
 #: model:project.project,name:project_stock.project_project_tm_test
 #: model:stock.picking.type,name:project_stock.stock_picking_type_tm_test
 msgid "Task material"
-msgstr "Attività per materiale"
+msgstr "Materiale lavoro"
 
 #. module: project_stock
 #: model:project.project,label_tasks:project_stock.project_project_tm_test
