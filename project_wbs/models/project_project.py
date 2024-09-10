@@ -10,7 +10,6 @@ from odoo import _, api, fields, models
 
 class Project(models.Model):
     _inherit = "project.project"
-    _description = "WBS element"
     _order = "complete_wbs_code"
 
     analytic_account_id = fields.Many2one(
@@ -145,12 +144,16 @@ class Project(models.Model):
         return None
 
     def prepare_analytics_vals(self, vals):
-        return {
+        analytic_vals = {
             "name": vals.get("name", _("Unknown Analytic Account")),
-            "company_id": vals.get("company_id", self.env.user.company_id.id),
+            "company_id": vals.get("company_id", self.env.company.id),
             "partner_id": vals.get("partner_id"),
             "active": True,
         }
+        code = vals.get("code", False)
+        if code:
+            analytic_vals.update({"code": code})
+        return analytic_vals
 
     def update_project_from_analytic_vals(self, vals):
         new_vals = vals
@@ -290,6 +293,11 @@ class Project(models.Model):
         if "active" in vals and vals["active"]:
             for project in self.filtered(lambda p: not p.analytic_account_id.active):
                 project.analytic_account_id.active = True
+        if "user_id" in vals:
+            for account in self.env["account.analytic.account"].browse(
+                self.analytic_account_id.get_child_accounts().keys()
+            ):
+                account.user_id = vals["user_id"]
         return res
 
     def action_open_parent_kanban_view(self):
