@@ -62,6 +62,7 @@ Contributors
 - `Tecnativa <https://www.tecnativa.com>`__:
 
   - Alexandre Díaz
+  - Carlos Lopez
 
 - `Jarsa <https://www.jarsa.com.mx>`__:
 
